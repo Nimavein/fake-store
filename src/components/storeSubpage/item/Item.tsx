@@ -10,11 +10,22 @@ import {
   ItemTitle,
   ItemWrapper,
 } from "./Item.styles";
-import { ItemType } from "../../../types";
+import { ItemType, InCartItemType } from "../../../types";
 import StarRatings from "react-star-ratings";
+import { useCartData } from "../../../contextProviders/cartProvider";
 
 const Item: React.FC<ItemType> = (props) => {
-  const { title, image, price, rating } = props;
+  const { title, image, price, rating, id } = props;
+  const { cart, setCart } = useCartData();
+
+  const addToCart = () => {
+    setCart([...cart, { ...props, inCartAmount: 1 }]);
+  };
+
+  const thisItemInCart: boolean = cart.some(
+    (item: InCartItemType) => item.id === id
+  );
+
   return (
     <ItemWrapper>
       <ItemImage src={image} />
@@ -33,7 +44,9 @@ const Item: React.FC<ItemType> = (props) => {
           </ItemRating>
         </ItemRatingAndPrice>
 
-        <AddToCartButton>Add to cart</AddToCartButton>
+        <AddToCartButton isAlreadyInCart={thisItemInCart} onClick={addToCart}>
+          {thisItemInCart ? "Already in cart" : "Add to cart"}
+        </AddToCartButton>
       </ItemCardContent>
     </ItemWrapper>
   );

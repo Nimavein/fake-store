@@ -38,14 +38,15 @@ export const ItemImage = styled.img`
   border-radius: 16px 16px 0 0;
 `;
 
-export const AddToCartButton = styled.button`
+export const AddToCartButton = styled.button<{ isAlreadyInCart: boolean }>`
   width: 100%;
   padding: 16px;
   margin-top: 18px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  background-color: ${getColor("orange")};
+  background-color: ${(props) =>
+    props.isAlreadyInCart ? getColor("black") : getColor("orange")};
   color: ${getColor("white")};
   transition: all ease-in-out 0.2s;
 
@@ -54,9 +55,6 @@ export const AddToCartButton = styled.button`
   }
 
   @media ${({ theme }) => theme.medias.mobile} {
-    &:hover {
-      background-color: ${getColor("orange")};
-    }
   }
 `;
 

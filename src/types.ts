@@ -11,6 +11,20 @@ export type ItemType = {
   };
 };
 
+export type InCartItemType = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+  inCartAmount: number;
+};
+
 export type IRoute = {
   path: string;
   name: string;

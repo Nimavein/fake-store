@@ -55,7 +55,7 @@ export const CartPreviewWrapper = styled.section<{ isCartOpen: boolean }>`
   }
 `;
 
-export const CartPreviewContent = styled.div<{ isCartOpen: boolean }>`
+export const CartPreviewContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
