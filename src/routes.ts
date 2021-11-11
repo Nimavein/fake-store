@@ -6,7 +6,7 @@ import ItemDetailsPage from "./components/ItemDetailsPage/ItemDetailsPage";
 const routes: IRoute[] = [
   {
     path: "/",
-    name: "Homepage",
+    name: "Home",
     component: Homepage,
     exact: true,
   },
