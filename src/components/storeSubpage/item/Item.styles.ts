@@ -44,7 +44,7 @@ export const AddToCartButton = styled.button<{ isAlreadyInCart: boolean }>`
   margin-top: 18px;
   border-radius: 8px;
   border: none;
-  cursor: pointer;
+  cursor: ${(props) => (props.isAlreadyInCart ? "auto" : "pointer")};
   background-color: ${(props) =>
     props.isAlreadyInCart ? getColor("black") : getColor("orange")};
   color: ${getColor("white")};
