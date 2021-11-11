@@ -26,9 +26,11 @@ export const ItemCardContent = styled.div`
   flex-direction: column;
 `;
 
-export const ItemTitle = styled.p``;
+export const ItemTitle = styled.p`
+  font-weight: 600;
+`;
 export const ItemPrice = styled.p`
-  margin-top: 8px;
+  font-weight: 600;
 `;
 
 export const ItemImage = styled.img`
@@ -56,4 +58,22 @@ export const AddToCartButton = styled.button`
       background-color: ${getColor("orange")};
     }
   }
+`;
+
+export const ItemRatingAndPrice = styled.div`
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ItemRating = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const ItemRatingCount = styled.p`
+  color: ${getColor("darkGrey")};
+  margin-left: 8px;
+  font-size: 12px;
 `;
