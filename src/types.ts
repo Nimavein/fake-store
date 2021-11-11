@@ -35,4 +35,5 @@ export type IRoute = {
 
 export type CartPreviewProps = {
   isCartOpen: boolean;
+  setIsCartOpen: (val: boolean) => void;
 };

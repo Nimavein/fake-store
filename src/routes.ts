@@ -2,6 +2,7 @@ import { IRoute } from "./types";
 import Homepage from "./components/homepage/Homepage";
 import StoreSubpage from "./components/storeSubpage/StoreSubpage";
 import ItemDetailsPage from "./components/ItemDetailsPage/ItemDetailsPage";
+import Cart from "./components/cart/Cart";
 
 const routes: IRoute[] = [
   {
@@ -14,6 +15,12 @@ const routes: IRoute[] = [
     path: "/store",
     name: "Store",
     component: StoreSubpage,
+    exact: true,
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    component: Cart,
     exact: true,
   },
   {

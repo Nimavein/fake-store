@@ -67,11 +67,13 @@ export const CartPreviewContent = styled.div`
   flex-direction: column;
   padding: 20px;
   width: 100%;
+  margin-top: 56px;
 
   @media ${({ theme }) => theme.medias.mobile} {
     height: 100%;
     justify-content: center;
     padding: 0;
+    margin-top: 0;
   }
 `;
 
@@ -103,6 +105,15 @@ export const GoToCartButton = styled.button`
   margin-right: auto;
   left: 0;
   right: 0;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    background-color: ${getColor("black")};
+  }
+
+  @media ${({ theme }) => theme.medias.mobile} {
+    background-color: ${getColor("orange")};
+  }
 
   @media ${({ theme }) => theme.medias.mobile} {
     width: 80%;

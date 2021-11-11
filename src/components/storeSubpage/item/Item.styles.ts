@@ -48,7 +48,7 @@ export const AddToCartButton = styled.button<{ isAlreadyInCart: boolean }>`
   background-color: ${(props) =>
     props.isAlreadyInCart ? getColor("black") : getColor("orange")};
   color: ${getColor("white")};
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.3s;
 
   &:hover {
     background-color: ${getColor("black")};

@@ -11,7 +11,7 @@ import {
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar: React.FC = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
 
   const handleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
       <BagButton onClick={handleCart}>
         <BagIcon icon={faShoppingBag} color="white" size="lg" />
       </BagButton>
-      <CartPreview isCartOpen={isCartOpen} />
+      <CartPreview setIsCartOpen={setIsCartOpen} isCartOpen={isCartOpen} />
     </NavbarWrapper>
   );
 };

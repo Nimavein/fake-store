@@ -11,9 +11,11 @@ import {
 import { CartPreviewProps } from "../../../types";
 import { useCartData } from "../../../contextProviders/cartProvider";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const CartPreview: React.FC<CartPreviewProps> = (props) => {
   const { cart, setCart } = useCartData();
+
   console.log(cart);
 
   return (
@@ -29,7 +31,11 @@ const CartPreview: React.FC<CartPreviewProps> = (props) => {
             </EmptyCartPreviewText>
           </EmptyCartPreview>
         )}
-        <GoToCartButton>Go to cart</GoToCartButton>
+        <Link to="/cart">
+          <GoToCartButton onClick={() => props.setIsCartOpen(false)}>
+            Go to cart
+          </GoToCartButton>
+        </Link>
       </CartPreviewContent>
     </CartPreviewWrapper>
   );
