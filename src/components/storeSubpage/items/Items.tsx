@@ -5,8 +5,6 @@ import Item from "../item/Item";
 import { ItemsWrapper } from "./Items.styles";
 
 const Items: React.FC = () => {
-  console.log("x");
-
   const items: ItemType[] | any = useItemsData();
   return (
     <ItemsWrapper>

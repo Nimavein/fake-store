@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
 import { ItemsProvider } from "./contextProviders/itemsProvider";
 import { CategoriesProvider } from "./contextProviders/categoriesProvider";
+import { CartProvider } from "./contextProviders/cartProvider";
 
 const queryClient = new QueryClient();
 
@@ -15,11 +16,13 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <QueryClientProvider client={queryClient}>
-        <ItemsProvider>
-          <CategoriesProvider>
-            <App />
-          </CategoriesProvider>
-        </ItemsProvider>
+        <CartProvider>
+          <ItemsProvider>
+            <CategoriesProvider>
+              <App />
+            </CategoriesProvider>
+          </ItemsProvider>
+        </CartProvider>
       </QueryClientProvider>
     </ThemeProvider>
   </React.StrictMode>,

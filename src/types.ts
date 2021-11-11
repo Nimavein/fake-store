@@ -18,3 +18,7 @@ export type IRoute = {
   component: any;
   props?: any;
 };
+
+export type CartPreviewProps = {
+  isCartOpen: boolean;
+};
