@@ -1,13 +1,59 @@
 import styled from "styled-components";
+import { getColor } from "../../../styles/utils";
 
 export const ItemWrapper = styled.div`
   break-inside: avoid;
   transform: translateZ(0);
+  box-shadow: 3.38443px 55.8976px 80px rgba(97, 121, 139, 0.07),
+    1.71337px 28.2982px 34.875px rgba(97, 121, 139, 0.04725),
+    0.676885px 11.1795px 13px rgba(97, 121, 139, 0.035),
+    0.148069px 2.44552px 4.625px rgba(97, 121, 139, 0.02275);
+  border-radius: 16px;
+  margin-bottom: 20px;
+
   @media ${({ theme }) => theme.medias.mobile} {
     width: 100%;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
   }
+`;
+
+export const ItemCardContent = styled.div`
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ItemTitle = styled.p``;
+export const ItemPrice = styled.p`
+  margin-top: 8px;
 `;
 
 export const ItemImage = styled.img`
   max-width: 100%;
+  border-radius: 16px 16px 0 0;
+`;
+
+export const AddToCartButton = styled.button`
+  width: 100%;
+  padding: 16px;
+  margin-top: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: ${getColor("orange")};
+  color: ${getColor("white")};
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    background-color: ${getColor("black")};
+  }
+
+  @media ${({ theme }) => theme.medias.mobile} {
+    &:hover {
+      background-color: ${getColor("orange")};
+    }
+  }
 `;

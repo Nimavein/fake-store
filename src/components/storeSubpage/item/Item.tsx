@@ -1,13 +1,24 @@
 import React from "react";
-import { ItemImage, ItemWrapper } from "./Item.styles";
+import {
+  AddToCartButton,
+  ItemCardContent,
+  ItemImage,
+  ItemPrice,
+  ItemTitle,
+  ItemWrapper,
+} from "./Item.styles";
 import { ItemType } from "../../../types";
 
 const Item: React.FC<ItemType> = (props) => {
-  const { title, image } = props;
+  const { title, image, price } = props;
   return (
     <ItemWrapper>
       <ItemImage src={image} />
-      {title}
+      <ItemCardContent>
+        <ItemTitle>{title}</ItemTitle>
+        <ItemPrice>{`$${price}`}</ItemPrice>
+        <AddToCartButton>Add to cart</AddToCartButton>
+      </ItemCardContent>
     </ItemWrapper>
   );
 };

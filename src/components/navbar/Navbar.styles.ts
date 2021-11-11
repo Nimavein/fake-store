@@ -8,6 +8,13 @@ export const NavbarWrapper = styled.nav`
   width: 100%;
   background-color: ${getColor("black")};
   z-index: 10;
+  display: flex;
+  padding: 24px;
+  font-size: 18px;
+
+  @media ${({ theme }) => theme.medias.mobile} {
+    padding: 16px;
+  }
 `;
 
 export const NavbarLinks = styled.div`

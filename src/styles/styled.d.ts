@@ -4,6 +4,7 @@ declare module "styled-components" {
   export interface DefaultTheme {
     medias: {
       mobile: string;
+      tablet: string;
     };
     fontFamily: {
       primaryFont: string;
@@ -17,6 +18,7 @@ declare module "styled-components" {
       success: string;
       failure: string;
       background: string;
+      orange: string;
     };
   }
 }

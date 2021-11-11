@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   }
     
   body {
-    background: ${getColor("background")};
+    background: ${getColor("white")};
   }
 
   span {
