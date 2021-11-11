@@ -9,6 +9,10 @@ import {
 import routes from "./routes";
 
 const App: React.FC = () => {
+  setTimeout(function () {
+    document.body.className = "";
+  }, 1000);
+
   return (
     <BrowserRouter>
       <Navbar />
