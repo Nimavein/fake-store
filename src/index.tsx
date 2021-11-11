@@ -5,6 +5,8 @@ import App from "./App";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
+import { ItemsProvider } from "./contextProviders/itemsProvider";
+import { CategoriesProvider } from "./contextProviders/categoriesProvider";
 
 const queryClient = new QueryClient();
 
@@ -13,7 +15,11 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <QueryClientProvider client={queryClient}>
-        <App />
+        <ItemsProvider>
+          <CategoriesProvider>
+            <App />
+          </CategoriesProvider>
+        </ItemsProvider>
       </QueryClientProvider>
     </ThemeProvider>
   </React.StrictMode>,

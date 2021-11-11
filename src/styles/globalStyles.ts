@@ -10,11 +10,10 @@ const GlobalStyle = createGlobalStyle`
     background: ${getColor("background")};
   }
 
-  .loader {
-    position: absolute;
-    top: 50%;  
+  span {
+    position: absolute; 
     left: 50%; 
-    transform: translate(-50%, 150%);
+    transform: translate(-50%, 100%);
   }
   
   * {
@@ -23,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: ${getFontFamily("primaryFont")};
-    color: ${getColor("white")};
+    color: ${getColor("black")};
   }
 `;
 
