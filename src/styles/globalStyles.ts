@@ -11,9 +11,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   span {
-    position: absolute; 
-    left: 50%; 
-    transform: translate(-50%, 100%);
+     height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
   }
   
   * {

@@ -37,3 +37,11 @@ export type CartPreviewProps = {
   isCartOpen: boolean;
   setIsCartOpen: (val: boolean) => void;
 };
+
+export type CategoryPropsType = {
+  categoryName: string;
+};
+
+export type ItemsPropsType = {
+  category: string;
+};

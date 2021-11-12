@@ -25,8 +25,6 @@ const CartPreview: React.FC<CartPreviewProps> = (props) => {
     0
   );
 
-  console.log(cart);
-
   return (
     <CartPreviewWrapper isCartOpen={props.isCartOpen}>
       <CartPreviewContent>

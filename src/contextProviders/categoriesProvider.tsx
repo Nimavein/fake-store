@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useQuery } from "react-query";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
 import { getCategories } from "../apiRequests";
 
 const CategoriesContext = React.createContext({});
@@ -13,18 +12,7 @@ export const CategoriesProvider: React.FC = ({ children }) => {
   );
 
   if (error) return <h1>Something went wrong...</h1>;
-  if (isLoading)
-    return (
-      <span>
-        <Loader
-          type="Puff"
-          color="#00BFFF"
-          height={200}
-          width={200}
-          timeout={3000}
-        />
-      </span>
-    );
+  if (isLoading) return <></>;
 
   return (
     <CategoriesContext.Provider value={data}>

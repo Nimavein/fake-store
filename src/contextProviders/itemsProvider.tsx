@@ -21,8 +21,8 @@ export const ItemsProvider: React.FC = ({ children }) => {
     return (
       <span>
         <Loader
-          type="Puff"
-          color="#00BFFF"
+          type="RevolvingDot"
+          color="#FF5F1F"
           height={200}
           width={200}
           timeout={3000}
