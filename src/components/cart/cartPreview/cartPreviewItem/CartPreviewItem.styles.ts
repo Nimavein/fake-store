@@ -49,8 +49,8 @@ export const ItemRatingAndPrice = styled.div`
 
 export const ItemAmount = styled.p`
   color: ${getColor("darkGrey")};
-  margin-left: 8px;
-  font-size: 12px;
+  padding: 0 10px 0 10px;
+  font-size: 14px;
 `;
 
 export const ItemPrice = styled.p`
@@ -70,4 +70,18 @@ export const TitleAndDeleteWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+`;
+
+export const AmountWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Plus = styled(FontAwesomeIcon)``;
+export const Minus = styled(FontAwesomeIcon)``;
+
+export const PlusMinusButton = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
 `;

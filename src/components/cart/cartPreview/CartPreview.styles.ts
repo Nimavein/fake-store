@@ -17,7 +17,12 @@ export const CartPreviewWrapper = styled.section<{ isCartOpen: boolean }>`
   text-align: center;
   border-radius: 0 0 0 16px;
   overflow: scroll;
-  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   animation: ${(props) =>
     props.isCartOpen ? "slidein 1s forwards" : "slideout 1s forwards"};

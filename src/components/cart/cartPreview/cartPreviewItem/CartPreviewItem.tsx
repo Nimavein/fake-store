@@ -13,8 +13,16 @@ import {
   DeleteItemButtom,
   DeleteItemIcon,
   TitleAndDeleteWrapper,
+  AmountWrapper,
+  Minus,
+  Plus,
+  PlusMinusButton,
 } from "./CartPreviewItem.styles";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTrash,
+  faPlusCircle,
+  faMinusCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 const CartPreviewItem: React.FC<InCartItemType> = (props) => {
   const { cart, setCart } = useCartData();
@@ -24,6 +32,29 @@ const CartPreviewItem: React.FC<InCartItemType> = (props) => {
       (item: InCartItemType) => item.id !== props.id
     );
     setCart(filteredCart);
+  };
+
+  const handleIncreaseAmount = (id: number) => {
+    let cartCopy: any = [...cart];
+    const itemToChange: InCartItemType = cartCopy.find(
+      (item: InCartItemType) => item.id === props.id
+    );
+    itemToChange.inCartAmount += 1;
+    setCart(cartCopy);
+  };
+
+  const handleDecreaseAmount = (id: number) => {
+    let cartCopy: any = [...cart];
+    const itemToChange: InCartItemType = cartCopy.find(
+      (item: InCartItemType) => item.id === props.id
+    );
+    itemToChange.inCartAmount -= 1;
+
+    if (itemToChange.inCartAmount === 0) {
+      handleDeleteItem(id);
+      return;
+    }
+    setCart(cartCopy);
   };
 
   return (
@@ -40,7 +71,25 @@ const CartPreviewItem: React.FC<InCartItemType> = (props) => {
         </TitleAndDeleteWrapper>
         <ItemRatingAndPrice>
           <ItemPrice>{`$${props.price}`}</ItemPrice>
-          <ItemAmount>{props.inCartAmount}</ItemAmount>
+          <AmountWrapper>
+            <PlusMinusButton>
+              <Minus
+                icon={faMinusCircle}
+                color="black"
+                size="lg"
+                onClick={() => handleDecreaseAmount(props.id)}
+              />
+            </PlusMinusButton>
+            <ItemAmount>{props.inCartAmount}</ItemAmount>
+            <PlusMinusButton>
+              <Plus
+                onClick={() => handleIncreaseAmount(props.id)}
+                icon={faPlusCircle}
+                color="black"
+                size="lg"
+              />
+            </PlusMinusButton>
+          </AmountWrapper>
         </ItemRatingAndPrice>
       </CartItemInfo>
     </CartPreviewItemWrapper>
