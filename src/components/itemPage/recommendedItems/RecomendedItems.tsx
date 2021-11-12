@@ -9,6 +9,7 @@ import {
   CarouselItemTitle,
   CarouselImage,
   CarouselItemPrice,
+  StyledCarouselLink,
 } from "./RecommendedItems.styles";
 
 const RecomendedItems: React.FC<ItemType> = (props) => {
@@ -38,13 +39,22 @@ const RecomendedItems: React.FC<ItemType> = (props) => {
         },
       }}
     >
-      {categoryItems.map((item) => (
+      {categoryItems.map((item: ItemType) => (
         <SwiperSlide>
-          <CarouselItemWrapper>
-            <CarouselImage src={item.image} />
-            <CarouselItemTitle>{item.title}</CarouselItemTitle>
-            <CarouselItemPrice>{`$${item.price}`}</CarouselItemPrice>
-          </CarouselItemWrapper>
+          <StyledCarouselLink
+            to={{
+              pathname: `/store/${item.id}`,
+              state: {
+                ...item,
+              },
+            }}
+          >
+            <CarouselItemWrapper>
+              <CarouselImage src={item.image} />
+              <CarouselItemTitle>{item.title}</CarouselItemTitle>
+              <CarouselItemPrice>{`$${item.price}`}</CarouselItemPrice>
+            </CarouselItemWrapper>
+          </StyledCarouselLink>
         </SwiperSlide>
       ))}
     </Swiper>

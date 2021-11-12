@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { getColor } from "../../../styles/utils";
 
 export const CarouselItemWrapper = styled.div`
   padding: 20px;
@@ -21,4 +23,9 @@ export const CarouselItemPrice = styled.p`
   font-size: 16px;
   align-self: flex-start;
   margin-top: 12px;
+`;
+
+export const StyledCarouselLink = styled(Link)`
+  text-decoration: none;
+  color: ${getColor("black")};
 `;
