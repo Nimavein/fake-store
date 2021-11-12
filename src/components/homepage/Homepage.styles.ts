@@ -31,11 +31,12 @@ export const LeftSection = styled.div<{ className: string }>`
   background-color: ${getColor("darkGrey")};
   text-align: center;
   padding: 60px 48px 36px 48px;
-  height: 60vh;
+  height: 63vh;
   display: flex;
   flex-direction: column;
 
   @media ${({ theme }) => theme.medias.mobile} {
+    margin-top: 24px;
     width: 100%;
     padding: 28px 20px 20px;
     height: auto;

@@ -3,7 +3,7 @@ import { DefaultTheme } from "styled-components";
 export const fontFamily = { primaryFont: "Roboto" };
 
 export const color = {
-  black: "#000000",
+  black: "#181818",
   white: "#fefefa",
   grey: "#868686",
   darkGrey: "#282828",

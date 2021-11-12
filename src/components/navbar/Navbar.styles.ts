@@ -28,6 +28,26 @@ export const NavbarLinks = styled.div`
 export const NavbarLink = styled(Link)`
   text-decoration: none;
   color: ${getColor("white")};
+  text-transform: uppercase;
+  position: relative;
+  font-weight: 500;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: ${getColor("white")};
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 `;
 
 export const BagIcon = styled(FontAwesomeIcon)`
