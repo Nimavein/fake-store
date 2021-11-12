@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { getColor } from "../../styles/utils";
-import { LinksDivider } from "../footer/footerLinks/FooterLinks.styles";
 import { AddToCartButton } from "../storeSubpage/item/Item.styles";
 
 export const ItemPageWrapper = styled.section`
@@ -20,6 +19,8 @@ export const ItemImage = styled.img`
 export const ItemImageWrapper = styled.div`
   height: 500px;
   width: 600px;
+  display: flex;
+  justify-content: center;
   @media ${({ theme }) => theme.medias.mobile} {
     width: 100%;
   }
@@ -85,4 +86,11 @@ export const PriceDivider = styled.hr`
   width: 100%;
   height: 1px;
   margin-bottom: 20px;
+`;
+
+export const MoreInCategoryText = styled.p`
+  margin-top: 32px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
 `;

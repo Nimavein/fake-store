@@ -15,10 +15,12 @@ import {
   ItemPrice,
   AddToCart,
   PriceDivider,
+  MoreInCategoryText,
 } from "./ItemPage.styles";
 import StarRatings from "react-star-ratings";
 import { useCartData } from "../../contextProviders/cartProvider";
 import { InCartItemType } from "../../types";
+import RecomendedItems from "./recommendedItems/RecomendedItems";
 
 const ItemPage: React.FC = () => {
   const { cart, setCart } = useCartData();
@@ -64,6 +66,8 @@ const ItemPage: React.FC = () => {
           </AddToCart>
         </ItemRightSection>
       </ItemInfo>
+      <MoreInCategoryText>More items in category</MoreInCategoryText>
+      <RecomendedItems {...locationCopy} />
     </ItemPageWrapper>
   );
 };
