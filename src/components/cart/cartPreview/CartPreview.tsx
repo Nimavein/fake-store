@@ -32,7 +32,7 @@ const CartPreview: React.FC<CartPreviewProps> = (props) => {
       <CartPreviewContent>
         <TotalValueWrapper>
           <TotalValueText>Total Cart Value</TotalValueText>
-          <TotalValue>{`$${cartTotalValue}`}</TotalValue>
+          <TotalValue>{`$${cartTotalValue.toFixed(2)}`}</TotalValue>
         </TotalValueWrapper>
         {cart.length > 0 ? (
           <LinkToCart to="/cart">
