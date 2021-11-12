@@ -7,10 +7,11 @@ import {
 
 export const HomepageWrapper = styled.section`
   height: 100%;
-  width: 100%;
   color: ${getColor("white")};
   display: flex;
   padding: 94px 24px 24px 24px;
+  max-width: 1560px;
+  margin: 0 auto 0 auto;
 
   @media ${({ theme }) => theme.medias.mobile} {
     padding: 54px 0 24px 0;
@@ -31,7 +32,7 @@ export const LeftSection = styled.div<{ className: string }>`
   background-color: ${getColor("darkGrey")};
   text-align: center;
   padding: 60px 48px 36px 48px;
-  height: 63vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
 

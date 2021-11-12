@@ -4,6 +4,8 @@ import { getColor } from "../../styles/utils";
 
 export const StoreSubpageWrapper = styled.section`
   padding: 92px 24px 32px 24px;
+  max-width: 1560px;
+  margin: 0 auto 0 auto;
 
   @media ${({ theme }) => theme.medias.mobile} {
     padding: 72px 20px;

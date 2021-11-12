@@ -51,3 +51,11 @@ export type FormDataType = {
   email: string;
   message: string;
 };
+
+export type ItemLocationType = {
+  hash?: string;
+  key?: string;
+  pathname: string;
+  search?: string;
+  state?: any;
+};

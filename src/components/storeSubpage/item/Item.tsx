@@ -9,6 +9,7 @@ import {
   ItemRatingCount,
   ItemTitle,
   ItemWrapper,
+  StyledItemLink,
 } from "./Item.styles";
 import { ItemType, InCartItemType } from "../../../types";
 import StarRatings from "react-star-ratings";
@@ -28,7 +29,16 @@ const Item: React.FC<ItemType> = (props) => {
 
   return (
     <ItemWrapper>
-      <ItemImage src={image} />
+      <StyledItemLink
+        to={{
+          pathname: `/store/${id}`,
+          state: {
+            ...props,
+          },
+        }}
+      >
+        <ItemImage src={image} />
+      </StyledItemLink>
       <ItemCardContent>
         <ItemTitle>{title}</ItemTitle>
         <ItemRatingAndPrice>

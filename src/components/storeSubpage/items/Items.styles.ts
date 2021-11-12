@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 export const ItemsWrapper = styled.section`
-  column-count: 6;
-
-  @media (max-width: 1600px) {
-    column-count: 5;
-  }
+  column-count: 5;
 
   @media (max-width: 1368px) {
     column-count: 4;

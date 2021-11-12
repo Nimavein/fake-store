@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { getColor } from "../../../styles/utils";
+import { Link } from "react-router-dom";
 
 export const ItemWrapper = styled.div`
   break-inside: avoid;
@@ -53,6 +54,7 @@ export const AddToCartButton = styled.button<{ isAlreadyInCart: boolean }>`
   color: ${getColor("white")};
   transition: all ease-in-out 0.3s;
   pointer-events: ${(props) => (props.isAlreadyInCart ? "none" : "auto")};
+  z-index: 50;
 
   &:hover {
     background-color: ${getColor("black")};
@@ -78,4 +80,9 @@ export const ItemRatingCount = styled.p`
   color: ${getColor("darkGrey")};
   margin-left: 8px;
   font-size: 12px;
+`;
+
+export const StyledItemLink = styled(Link)`
+  text-decoration: none;
+  color: ${getColor("black")};
 `;
