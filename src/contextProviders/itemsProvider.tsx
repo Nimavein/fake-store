@@ -10,10 +10,7 @@ const ItemsContext = React.createContext({});
 export const ItemsProvider: React.FC = ({ children }) => {
   const { data, isLoading, error } = useQuery<ItemType[] | any>(
     "items",
-    getItems,
-    {
-      refetchInterval: 300,
-    }
+    getItems
   );
 
   if (error) return <h1>Something went wrong...</h1>;
