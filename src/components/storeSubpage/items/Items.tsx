@@ -6,13 +6,10 @@ import { ItemsWrapper } from "./Items.styles";
 
 const Items: React.FC<ItemsPropsType> = (props) => {
   const items: ItemType[] | any = useItemsData();
-  console.log(props.category);
 
   const itemsFilteredByCategory: ItemType[] = items.filter(
     (item: ItemType) => item.category === props.category
   );
-
-  console.log(itemsFilteredByCategory);
 
   return (
     <ItemsWrapper>

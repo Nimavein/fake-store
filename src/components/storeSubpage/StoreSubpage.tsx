@@ -1,33 +1,57 @@
-import React from "react";
-import Categories from "./categories/Categories";
+import React, { useState } from "react";
 import Items from "./items/Items";
-import { StoreSubpageWrapper } from "./StoreSubpage.styles";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import {
+  StoreSubpageWrapper,
+  StyledTab,
+  StyledTabList,
+  StyledTabPanel,
+  StyledTabs,
+  TabButton,
+  ToogleCategoriesButton,
+} from "./StoreSubpage.styles";
+
 import { useCategoriesData } from "../../contextProviders/categoriesProvider";
 
 const StoreSubpage: React.FC = () => {
+  const [areCategoriesVisible, setAreCategoriesVisible] =
+    useState<boolean>(false);
   const categories: any = useCategoriesData();
+
+  const handleCategoriesVisibility = () => {
+    setAreCategoriesVisible(!areCategoriesVisible);
+  };
 
   return (
     <StoreSubpageWrapper>
-      <Tabs>
-        <TabList>
-          <Tab>ALL</Tab>
+      <ToogleCategoriesButton onClick={handleCategoriesVisibility}>
+        {areCategoriesVisible ? "Hide Categories" : "Show Categories"}
+      </ToogleCategoriesButton>
+      <StyledTabs>
+        <StyledTabList areCategoriesVisible={areCategoriesVisible}>
+          <StyledTab>
+            <TabButton onClick={handleCategoriesVisibility}>ALL</TabButton>
+          </StyledTab>
           {categories.map((category: string, index: number) => {
-            return <Tab key={index}>{category}</Tab>;
+            return (
+              <StyledTab key={index}>
+                <TabButton onClick={handleCategoriesVisibility}>
+                  {category}
+                </TabButton>
+              </StyledTab>
+            );
           })}
-        </TabList>
-        <TabPanel>
+        </StyledTabList>
+        <StyledTabPanel>
           <Items category="all" />
-        </TabPanel>
+        </StyledTabPanel>
         {categories.map((category: string, index: number) => {
           return (
-            <TabPanel key={index}>
+            <StyledTabPanel key={index}>
               <Items category={category} />
-            </TabPanel>
+            </StyledTabPanel>
           );
         })}
-      </Tabs>
+      </StyledTabs>
     </StoreSubpageWrapper>
   );
 };
