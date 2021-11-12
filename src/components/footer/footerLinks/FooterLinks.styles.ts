@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { getColor } from "../../../styles/utils";
+import { FormDivider } from "../contactForm/ContactForm.styles";
 
 export const LinksSection = styled.div`
   height: 100%;
@@ -46,5 +47,15 @@ export const FooterLink = styled(Link)`
   &:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+`;
+
+export const LinksDivider = styled(FormDivider)`
+  width: 100%;
+  display: none;
+  margin-top: 0;
+
+  @media ${({ theme }) => theme.medias.mobile} {
+    display: block;
   }
 `;
