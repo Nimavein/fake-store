@@ -9,4 +9,14 @@ export const FooterWrapper = styled.footer`
   text-align: center;
   padding: 24px;
   min-height: 252px;
+  display: flex;
+`;
+
+export const LinksSection = styled.div`
+  height: 100%;
+  width: 50%;
+  background-color: red;
+  @media ${({ theme }) => theme.medias.mobile} {
+    width: 100%;
+  }
 `;

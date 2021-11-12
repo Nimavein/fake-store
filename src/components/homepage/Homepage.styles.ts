@@ -38,7 +38,7 @@ export const LeftSection = styled.div<{ className: string }>`
   @media ${({ theme }) => theme.medias.mobile} {
     margin-top: 24px;
     width: 100%;
-    padding: 28px 20px 20px;
+    padding: 28px 20px 24px 20px;
     height: auto;
   }
 `;
@@ -91,4 +91,10 @@ export const HomepageLinkToCart = styled(LinkToCart)`
   width: 60%;
 `;
 
-export const HomepageGoToCartButton = styled(GoToCartButton)``;
+export const HomepageGoToCartButton = styled(GoToCartButton)`
+  @media ${({ theme }) => theme.medias.mobile} {
+    &:hover {
+      background-color: ${getColor("orange")};
+    }
+  }
+`;

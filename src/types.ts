@@ -45,3 +45,9 @@ export type CategoryPropsType = {
 export type ItemsPropsType = {
   category: string;
 };
+
+export type FormDataType = {
+  name: string;
+  email: string;
+  message: string;
+};

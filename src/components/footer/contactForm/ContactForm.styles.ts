@@ -49,13 +49,24 @@ export const ContactUsText = styled.p`
   margin-bottom: 12px;
 `;
 
-export const SendMessageButton = styled(HomepageGoToCartButton)`
+export const SendMessageButton = styled(HomepageGoToCartButton)<{
+  isSubmitSuccessful: boolean;
+}>`
   margin-top: 18px;
   width: 40%;
   place-self: flex-end;
+  background-color: ${(props) =>
+    props.isSubmitSuccessful ? getColor("success") : getColor("orange")};
+
+  &:hover {
+    background-color: ${(props) =>
+      props.isSubmitSuccessful ? getColor("success") : getColor("orange")};
+  }
 
   @media ${({ theme }) => theme.medias.mobile} {
-    width: 100%;
+    &:hover {
+      width: 100%;
+    }
   }
 `;
 
