@@ -4,7 +4,7 @@ export const fontFamily = { primaryFont: "Roboto" };
 
 export const color = {
   black: "#000000",
-  white: "#FFFFFF",
+  white: "#fefefa",
   grey: "#868686",
   darkGrey: "#282828",
   lightGrey: "#E8E8E8",

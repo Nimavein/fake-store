@@ -7,17 +7,18 @@ const GlobalStyle = createGlobalStyle`
   }
     
   body {
+    min-height: 100%;
     background: ${getColor("white")};
   }
 
   span {
-     height: 200px;
-  width: 200px;
-  position: absolute;
-  left: 50%;
-  margin-left: -50px;
-  top: 50%;
-  margin-top: -50px;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
   }
   
   * {
