@@ -13,7 +13,9 @@ export const CarouselImage = styled.img`
   margin-bottom: 20px;
 `;
 
-export const CarouselItemTitle = styled.p``;
+export const CarouselItemTitle = styled.p`
+  align-self: flex-start;
+`;
 export const CarouselItemPrice = styled.p`
   font-weight: 600;
   font-size: 16px;
