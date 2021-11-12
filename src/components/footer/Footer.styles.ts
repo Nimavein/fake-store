@@ -10,13 +10,10 @@ export const FooterWrapper = styled.footer`
   padding: 24px;
   min-height: 252px;
   display: flex;
-`;
-
-export const LinksSection = styled.div`
-  height: 100%;
-  width: 50%;
-  background-color: red;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
   @media ${({ theme }) => theme.medias.mobile} {
-    width: 100%;
+    flex-direction: column;
   }
 `;

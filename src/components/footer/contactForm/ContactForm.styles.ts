@@ -53,7 +53,7 @@ export const SendMessageButton = styled(HomepageGoToCartButton)<{
   isSubmitSuccessful: boolean;
 }>`
   margin-top: 18px;
-  width: 40%;
+  width: ${(props) => (props.isSubmitSuccessful ? "100%" : "40%")};
   place-self: flex-end;
   background-color: ${(props) =>
     props.isSubmitSuccessful ? getColor("success") : getColor("orange")};
@@ -64,9 +64,7 @@ export const SendMessageButton = styled(HomepageGoToCartButton)<{
   }
 
   @media ${({ theme }) => theme.medias.mobile} {
-    &:hover {
-      width: 100%;
-    }
+    width: ${(props) => (props.isSubmitSuccessful ? "100%" : "50%")};
   }
 `;
 
