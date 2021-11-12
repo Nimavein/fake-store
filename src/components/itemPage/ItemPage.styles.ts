@@ -23,6 +23,7 @@ export const ItemImageWrapper = styled.div`
   justify-content: center;
   @media ${({ theme }) => theme.medias.mobile} {
     width: 100%;
+    height: auto;
   }
 `;
 
