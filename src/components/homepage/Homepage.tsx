@@ -6,6 +6,8 @@ import {
   HomepageTitle,
   LowerText,
   RightSection,
+  HomepageLinkToCart,
+  HomepageGoToCartButton,
 } from "./Homepage.styles";
 
 const Homepage: React.FC = () => {
@@ -27,6 +29,10 @@ const Homepage: React.FC = () => {
           natus quibusdam magni fugiat nulla quo, magnam soluta rem? Commodi ut
           atque libero corrupti.
         </LowerText>
+
+        <HomepageLinkToCart to="/store">
+          <HomepageGoToCartButton>Browse products</HomepageGoToCartButton>
+        </HomepageLinkToCart>
       </LeftSection>
       <RightSection className="right-section"></RightSection>
     </HomepageWrapper>

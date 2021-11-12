@@ -7,6 +7,7 @@ import {
   RouteComponentProps,
 } from "react-router-dom";
 import routes from "./routes";
+import Footer from "./components/footer/Footer";
 
 const App: React.FC = () => {
   setTimeout(function () {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
           );
         })}
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 };
