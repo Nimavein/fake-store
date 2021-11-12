@@ -22,7 +22,7 @@ export const NavbarWrapper = styled.nav`
 
 export const NavbarLinks = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 20px;
 `;
 
 export const NavbarLink = styled(Link)`

@@ -40,6 +40,9 @@ export const ItemImage = styled.img`
 
 export const AddToCartButton = styled.button<{ isAlreadyInCart: boolean }>`
   width: 100%;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
   padding: 16px;
   margin-top: 18px;
   border-radius: 8px;
@@ -49,6 +52,7 @@ export const AddToCartButton = styled.button<{ isAlreadyInCart: boolean }>`
     props.isAlreadyInCart ? getColor("black") : getColor("orange")};
   color: ${getColor("white")};
   transition: all ease-in-out 0.3s;
+  pointer-events: ${(props) => (props.isAlreadyInCart ? "none" : "auto")};
 
   &:hover {
     background-color: ${getColor("black")};

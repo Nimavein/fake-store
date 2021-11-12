@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { getColor } from "../../../styles/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 export const CartPreviewWrapper = styled.section<{ isCartOpen: boolean }>`
   background-color: ${getColor("darkGrey")};
@@ -15,6 +16,8 @@ export const CartPreviewWrapper = styled.section<{ isCartOpen: boolean }>`
   align-items: center;
   text-align: center;
   border-radius: 0 0 0 16px;
+  overflow: scroll;
+  overflow-x: hidden;
 
   animation: ${(props) =>
     props.isCartOpen ? "slidein 1s forwards" : "slideout 1s forwards"};
@@ -39,7 +42,7 @@ export const CartPreviewWrapper = styled.section<{ isCartOpen: boolean }>`
   @media ${({ theme }) => theme.medias.mobile} {
     top: 54px;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     border-radius: 0;
 
     @keyframes slidein {
@@ -65,19 +68,14 @@ export const CartPreviewWrapper = styled.section<{ isCartOpen: boolean }>`
 export const CartPreviewContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 14px 0 14px;
   width: 100%;
-  margin-top: 56px;
 
   @media ${({ theme }) => theme.medias.mobile} {
-    height: 100%;
     justify-content: center;
-    padding: 0;
-    margin-top: 0;
+    padding-bottom: 60px;
   }
 `;
-
-export const CartPreviewItem = styled.div``;
 
 export const EmptyCartPreview = styled.div`
   display: flex;
@@ -92,19 +90,16 @@ export const EmptyCartPreviewText = styled.p``;
 
 export const GoToCartButton = styled.button`
   padding: 16px;
-  width: 50%;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  width: 100%;
   background: ${getColor("orange")};
   color: ${getColor("white")};
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  position: absolute;
-  bottom: 20px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
+
   transition: all ease-in-out 0.3s;
 
   &:hover {
@@ -114,15 +109,35 @@ export const GoToCartButton = styled.button`
   @media ${({ theme }) => theme.medias.mobile} {
     background-color: ${getColor("orange")};
   }
-
-  @media ${({ theme }) => theme.medias.mobile} {
-    width: 80%;
-    position: relative;
-    bottom: auto;
-    margin-top: 26px;
-  }
 `;
 
 export const CartPreviewIcon = styled(FontAwesomeIcon)`
   margin: 0 auto 26px auto;
+`;
+
+export const TotalValueWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+`;
+
+export const TotalValue = styled.p`
+  font-weight: 600;
+  color: ${getColor("white")};
+`;
+
+export const TotalValueText = styled.p`
+  font-weight: 600;
+  color: ${getColor("white")};
+`;
+
+export const LinkToCart = styled(Link)`
+  margin-bottom: 20px;
+`;
+
+export const Divider = styled.hr`
+  border: 1px solid ${getColor("white")};
+  width: 100%;
+  height: 1px;
+  margin-bottom: 20px;
 `;
