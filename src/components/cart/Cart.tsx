@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import {
   BrowseProductsLink,
   CartIcon,
@@ -18,9 +18,12 @@ import { InCartItemType } from "../../types";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import CartItem from "./cartItem/CartItem";
 import CartForm from "./cartForm/CartForm";
-import { parse } from "path";
 
 const Cart: React.FC = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   const { cart } = useCartData();
 
   const cartTotalValue: number = cart.reduce(

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { useCartData } from "../../../contextProviders/cartProvider";
 import { InCartItemType } from "../../../types";
 import {
@@ -25,10 +25,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const CartItem: React.FC<InCartItemType> = (props) => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
   const { cart, setCart } = useCartData();
 
   const handleDeleteItem: any = (id: number) => {
