@@ -58,7 +58,7 @@ const Cart: React.FC = () => {
         {cart.length > 0 && (
           <>
             <Divider />
-            <OrderTotal>{`Total: $${cartTotalValue}`}</OrderTotal>
+            <OrderTotal>{`Total: $${cartTotalValue.toFixed(2)}`}</OrderTotal>
           </>
         )}
       </LeftSection>

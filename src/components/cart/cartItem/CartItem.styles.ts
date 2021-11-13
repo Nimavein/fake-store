@@ -13,6 +13,7 @@ import {
   PlusMinusButton,
   ItemRatingAndPrice,
 } from "../cartPreview/cartPreviewItem/CartPreviewItem.styles";
+import { StyledCarouselLink } from "../../itemPage/recommendedItems/RecommendedItems.styles";
 
 export const CartItemWrapper = styled(CartPreviewItemWrapper)`
   padding-top: 36px;
@@ -50,3 +51,7 @@ export const Plus = styled(FontAwesomeIcon)``;
 export const Minus = styled(FontAwesomeIcon)``;
 
 export const StyledPlusMinusButton = styled(PlusMinusButton)``;
+
+export const StyledCartLink = styled(StyledCarouselLink)`
+  width: 100%;
+`;

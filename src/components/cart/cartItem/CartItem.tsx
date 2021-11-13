@@ -17,6 +17,7 @@ import {
   Minus,
   Plus,
   StyledPlusMinusButton,
+  StyledCartLink,
 } from "./CartItem.styles";
 import {
   faTrash,
@@ -64,7 +65,16 @@ const CartItem: React.FC<InCartItemType> = (props) => {
       </CartImageWrapper>
       <CartItemInfoWrapper>
         <StyledTitleAndDeleteWrapper>
-          <StyledCartItemName>{props.title}</StyledCartItemName>
+          <StyledCartLink
+            to={{
+              pathname: `/store/${props.id}`,
+              state: {
+                ...props,
+              },
+            }}
+          >
+            <StyledCartItemName>{props.title}</StyledCartItemName>
+          </StyledCartLink>
           <DeleteItemButtom onClick={() => handleDeleteItem(props.id)}>
             <DeleteItemIcon icon={faTrash} color="black" size="2x" />
           </DeleteItemButtom>

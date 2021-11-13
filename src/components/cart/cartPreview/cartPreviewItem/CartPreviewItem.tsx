@@ -23,7 +23,7 @@ import {
   faPlusCircle,
   faMinusCircle,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { StyledCartLink } from "../../cartItem/CartItem.styles";
 const CartPreviewItem: React.FC<InCartItemType> = (props) => {
   const { cart, setCart } = useCartData();
 
@@ -64,7 +64,16 @@ const CartPreviewItem: React.FC<InCartItemType> = (props) => {
       </CartPreviewImageWrapper>
       <CartItemInfo>
         <TitleAndDeleteWrapper>
-          <CartItemName>{props.title}</CartItemName>
+          <StyledCartLink
+            to={{
+              pathname: `/store/${props.id}`,
+              state: {
+                ...props,
+              },
+            }}
+          >
+            <CartItemName>{props.title}</CartItemName>
+          </StyledCartLink>
           <DeleteItemButtom onClick={() => handleDeleteItem(props.id)}>
             <DeleteItemIcon icon={faTrash} color="black" size="2x" />
           </DeleteItemButtom>
