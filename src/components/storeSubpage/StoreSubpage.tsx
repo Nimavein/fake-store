@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState } from "react";
 import Items from "./items/Items";
 import {
   StoreSubpageWrapper,
@@ -16,11 +16,6 @@ const StoreSubpage: React.FC = () => {
   const [areCategoriesVisible, setAreCategoriesVisible] =
     useState<boolean>(false);
   const categories: any = useCategoriesData();
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
   const handleCategoriesVisibility = () => {
     setAreCategoriesVisible(!areCategoriesVisible);
   };

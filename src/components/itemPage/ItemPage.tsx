@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import { ItemLocationType, ItemType } from "../../types";
 import {
@@ -25,10 +25,6 @@ import RecomendedItems from "./recommendedItems/RecomendedItems";
 const ItemPage: React.FC = () => {
   const { cart, setCart } = useCartData();
   const location: ItemLocationType = useLocation();
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   const { title, id, image, description, price, rating, category } =
     location.state;

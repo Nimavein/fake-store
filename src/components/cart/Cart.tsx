@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import {
   BrowseProductsLink,
   CartIcon,
@@ -20,10 +20,6 @@ import CartItem from "./cartItem/CartItem";
 import CartForm from "./cartForm/CartForm";
 
 const Cart: React.FC = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
   const { cart } = useCartData();
 
   const cartTotalValue: number = cart.reduce(

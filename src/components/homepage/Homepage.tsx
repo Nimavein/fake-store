@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import {
   HomepageWrapper,
   LeftSection,
@@ -11,9 +11,6 @@ import {
 } from "./Homepage.styles";
 
 const Homepage: React.FC = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
   return (
     <HomepageWrapper>
       <LeftSection className="left-section">
