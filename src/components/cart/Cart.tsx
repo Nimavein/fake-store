@@ -61,7 +61,7 @@ const Cart: React.FC = () => {
       <RightSection isCartEmpty={cart.length === 0}>
         <FormText>Submit your order</FormText>
         <Divider />
-        <CartForm cartTotal={cartTotalValue} />
+        <CartForm cartTotal={cartTotalValue.toFixed(2)} />
       </RightSection>
     </CartWrapper>
   );
