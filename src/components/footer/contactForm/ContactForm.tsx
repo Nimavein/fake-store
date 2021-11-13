@@ -46,11 +46,13 @@ const ContactForm: React.FC = () => {
             type="email"
             {...register("email")}
             required
+            name="email"
           />
         </NameAndMail>
         <Message
           placeholder="Enter your message..."
           {...register("message")}
+          name="message"
           required
         />
         <SendMessageButton

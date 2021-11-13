@@ -70,7 +70,7 @@ export const SendMessageButton = styled(HomepageGoToCartButton)<{
 
 export const FormDivider = styled.hr`
   border: 1px solid ${getColor("orange")};
-  width: 20%;
+  width: 120px;
   height: 1px;
   margin: 12px 0;
 `;
