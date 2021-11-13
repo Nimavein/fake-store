@@ -1,4 +1,5 @@
 import React from "react";
+import { scrollToTop } from "../../scrollFunction";
 import {
   HomepageWrapper,
   LeftSection,
@@ -31,7 +32,9 @@ const Homepage: React.FC = () => {
         </LowerText>
 
         <HomepageLinkToCart to="/store">
-          <HomepageGoToCartButton>Browse products</HomepageGoToCartButton>
+          <HomepageGoToCartButton onClick={scrollToTop}>
+            Browse products
+          </HomepageGoToCartButton>
         </HomepageLinkToCart>
       </LeftSection>
       <RightSection className="right-section"></RightSection>

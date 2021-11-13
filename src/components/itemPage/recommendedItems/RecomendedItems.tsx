@@ -11,9 +11,11 @@ import {
   CarouselItemPrice,
   StyledCarouselLink,
 } from "./RecommendedItems.styles";
+import { useCartData } from "../../../contextProviders/cartProvider";
+import { scrollToTop } from "../../../scrollFunction";
 
 const RecomendedItems: React.FC<ItemType> = (props) => {
-  console.log(props.category);
+  const { setIsCartOpen } = useCartData();
   const items: ItemType[] | any = useItemsData();
 
   const categoryItems: ItemType[] = items.filter(
@@ -42,6 +44,10 @@ const RecomendedItems: React.FC<ItemType> = (props) => {
       {categoryItems.map((item: ItemType) => (
         <SwiperSlide>
           <StyledCarouselLink
+            onClick={() => {
+              setIsCartOpen(false);
+              scrollToTop();
+            }}
             to={{
               pathname: `/store/${item.id}`,
               state: {

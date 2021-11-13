@@ -24,6 +24,7 @@ import {
   faPlusCircle,
   faMinusCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { scrollToTop } from "../../../scrollFunction";
 
 const CartItem: React.FC<InCartItemType> = (props) => {
   const { cart, setCart, setIsCartOpen } = useCartData();
@@ -66,7 +67,10 @@ const CartItem: React.FC<InCartItemType> = (props) => {
       <CartItemInfoWrapper>
         <StyledTitleAndDeleteWrapper>
           <StyledCartLink
-            onClick={() => setIsCartOpen(false)}
+            onClick={() => {
+              setIsCartOpen(false);
+              scrollToTop();
+            }}
             to={{
               pathname: `/store/${props.id}`,
               state: {

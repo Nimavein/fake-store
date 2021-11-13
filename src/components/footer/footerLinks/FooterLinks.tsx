@@ -1,4 +1,5 @@
 import React from "react";
+import { scrollToTop } from "../../../scrollFunction";
 import {
   LinksSection,
   LeftLinks,
@@ -12,9 +13,15 @@ const FooterLinks: React.FC = () => {
     <>
       <LinksSection>
         <LeftLinks>
-          <FooterLink to="/">Home</FooterLink>
-          <FooterLink to="/store">Store</FooterLink>
-          <FooterLink to="/cart">Your Cart</FooterLink>
+          <FooterLink onClick={scrollToTop} to="/">
+            Home
+          </FooterLink>
+          <FooterLink onClick={scrollToTop} to="/store">
+            Store
+          </FooterLink>
+          <FooterLink onClick={scrollToTop} to="/cart">
+            Your Cart
+          </FooterLink>
         </LeftLinks>
         <RightLinks>
           <FooterLink to="#">FAQ</FooterLink>

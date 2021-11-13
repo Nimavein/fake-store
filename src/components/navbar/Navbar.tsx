@@ -10,6 +10,7 @@ import {
 } from "./Navbar.styles";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { useCartData } from "../../contextProviders/cartProvider";
+import { scrollToTop } from "../../scrollFunction";
 
 const Navbar: React.FC = () => {
   const { handleCart } = useCartData();
@@ -19,7 +20,11 @@ const Navbar: React.FC = () => {
       <NavbarLinks>
         {routes.slice(0, 2).map((routes) => {
           return (
-            <NavbarLink key={routes.name} to={routes.path}>
+            <NavbarLink
+              onClick={scrollToTop}
+              key={routes.name}
+              to={routes.path}
+            >
               {routes.name}
             </NavbarLink>
           );
