@@ -66,6 +66,7 @@ const ItemPage: React.FC = () => {
           </AddToCart>
         </ItemRightSection>
       </ItemInfo>
+      <PriceDivider />
       <MoreInCategoryText>More items in category</MoreInCategoryText>
       <RecomendedItems {...locationCopy} />
     </ItemPageWrapper>
