@@ -17,7 +17,6 @@ import {
   CartFormDataType,
   CartFormPropsType,
   CountryDataType,
-  InCartItemType,
 } from "../../../types";
 
 const CartForm: React.FC<CartFormPropsType> = (props) => {
@@ -25,7 +24,6 @@ const CartForm: React.FC<CartFormPropsType> = (props) => {
   const { register, handleSubmit, reset } = useForm<CartFormDataType>();
   const options: CountryDataType[] = useMemo(() => countryList().getData(), []);
   const { cart, setCart } = useCartData();
-  console.log(cart);
 
   useEffect(() => {
     let submitSuccessfulTimer = setTimeout(
