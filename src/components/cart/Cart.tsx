@@ -18,6 +18,7 @@ import { InCartItemType } from "../../types";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import CartItem from "./cartItem/CartItem";
 import CartForm from "./cartForm/CartForm";
+import { parse } from "path";
 
 const Cart: React.FC = () => {
   const { cart } = useCartData();
@@ -61,7 +62,7 @@ const Cart: React.FC = () => {
       <RightSection isCartEmpty={cart.length === 0}>
         <FormText>Submit your order</FormText>
         <Divider />
-        <CartForm cartTotal={cartTotalValue.toFixed(2)} />
+        <CartForm cartTotal={parseInt(cartTotalValue.toFixed(2))} />
       </RightSection>
     </CartWrapper>
   );
