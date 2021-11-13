@@ -24,7 +24,8 @@ const CartForm: React.FC<CartFormPropsType> = (props) => {
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState<boolean>(false);
   const { register, handleSubmit, reset } = useForm<CartFormDataType>();
   const options: CountryDataType[] = useMemo(() => countryList().getData(), []);
-  const cart: InCartItemType[] | any = useCartData();
+  const { cart, setCart } = useCartData();
+  console.log(cart);
 
   useEffect(() => {
     let submitSuccessfulTimer = setTimeout(
@@ -40,6 +41,7 @@ const CartForm: React.FC<CartFormPropsType> = (props) => {
     setIsSubmitSuccessful(true);
     console.log(data);
     reset();
+    setTimeout(() => setCart([]), 4000);
   };
   return (
     <CartFormWrapper onSubmit={handleSubmit(onSubmit)}>

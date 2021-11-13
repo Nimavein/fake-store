@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { getColor } from "../../../styles/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   CartPreviewImage,
