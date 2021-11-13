@@ -16,6 +16,7 @@ import { InCartItemType } from "../../../types";
 import { useCartData } from "../../../contextProviders/cartProvider";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import CartPreviewItem from "./cartPreviewItem/CartPreviewItem";
+import { scrollToTop } from "../../../scrollFunction";
 
 const CartPreview: React.FC = () => {
   const { cart, isCartOpen, handleCart } = useCartData();
@@ -33,11 +34,11 @@ const CartPreview: React.FC = () => {
           <TotalValue>{`$${cartTotalValue.toFixed(2)}`}</TotalValue>
         </TotalValueWrapper>
         {cart.length > 0 ? (
-          <LinkToCart to="/cart">
+          <LinkToCart to="/cart" onClick={scrollToTop}>
             <GoToCartButton onClick={handleCart}>Go to cart</GoToCartButton>
           </LinkToCart>
         ) : (
-          <LinkToCart to="/store">
+          <LinkToCart to="/store" onClick={scrollToTop}>
             <GoToCartButton onClick={handleCart}>
               Browse products
             </GoToCartButton>
