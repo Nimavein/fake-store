@@ -38,8 +38,7 @@ export const CartItemInfo = styled.div`
 export const CartItemName = styled.p`
   color: ${getColor("black")};
   font-size: 14px;
-  width: 70%;
-
+  width: 100%;
   @media ${({ theme }) => theme.medias.mobile} {
   }
 `;

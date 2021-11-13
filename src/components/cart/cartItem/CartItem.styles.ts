@@ -53,5 +53,5 @@ export const Minus = styled(FontAwesomeIcon)``;
 export const StyledPlusMinusButton = styled(PlusMinusButton)``;
 
 export const StyledCartLink = styled(StyledCarouselLink)`
-  width: 100%;
+  width: 70%;
 `;
