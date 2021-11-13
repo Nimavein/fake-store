@@ -117,7 +117,9 @@ export const GoToCartButton = styled.button`
   }
 
   @media ${({ theme }) => theme.medias.mobile} {
-    background-color: ${getColor("orange")};
+    &:hover {
+      background-color: ${getColor("orange")};
+    }
   }
 `;
 
