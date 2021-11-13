@@ -40,6 +40,7 @@ export const DeleteItemIcon = styled(FontAwesomeIcon)``;
 export const DeleteItemButtom = styled.button`
   border: none;
   cursor: pointer;
+  background: none;
 `;
 
 export const StyledTitleAndDeleteWrapper = styled(TitleAndDeleteWrapper)``;
