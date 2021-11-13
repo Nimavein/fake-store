@@ -14,6 +14,7 @@ import {
 import { ItemType, InCartItemType } from "../../../types";
 import StarRatings from "react-star-ratings";
 import { useCartData } from "../../../contextProviders/cartProvider";
+import { scrollToTop } from "../../../scrollFunction";
 
 const Item: React.FC<ItemType> = (props) => {
   const { title, image, price, rating, id } = props;
@@ -30,6 +31,7 @@ const Item: React.FC<ItemType> = (props) => {
   return (
     <ItemWrapper>
       <StyledItemLink
+        onClick={() => scrollToTop()}
         to={{
           pathname: `/store/${id}`,
           state: {
