@@ -12,13 +12,13 @@ import {
   LinkToCart,
   Divider,
 } from "./CartPreview.styles";
-import { CartPreviewProps, InCartItemType } from "../../../types";
+import { InCartItemType } from "../../../types";
 import { useCartData } from "../../../contextProviders/cartProvider";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import CartPreviewItem from "./cartPreviewItem/CartPreviewItem";
 
-const CartPreview: React.FC<CartPreviewProps> = (props) => {
-  const { cart } = useCartData();
+const CartPreview: React.FC = () => {
+  const { cart, isCartOpen, handleCart } = useCartData();
 
   const cartTotalValue: number = cart.reduce(
     (acc: any, obj: any) => acc + obj.inCartAmount * obj.price,
@@ -26,7 +26,7 @@ const CartPreview: React.FC<CartPreviewProps> = (props) => {
   );
 
   return (
-    <CartPreviewWrapper isCartOpen={props.isCartOpen}>
+    <CartPreviewWrapper isCartOpen={isCartOpen}>
       <CartPreviewContent>
         <TotalValueWrapper>
           <TotalValueText>Total Cart Value</TotalValueText>
@@ -34,13 +34,11 @@ const CartPreview: React.FC<CartPreviewProps> = (props) => {
         </TotalValueWrapper>
         {cart.length > 0 ? (
           <LinkToCart to="/cart">
-            <GoToCartButton onClick={() => props.setIsCartOpen(false)}>
-              Go to cart
-            </GoToCartButton>
+            <GoToCartButton onClick={handleCart}>Go to cart</GoToCartButton>
           </LinkToCart>
         ) : (
           <LinkToCart to="/store">
-            <GoToCartButton onClick={() => props.setIsCartOpen(false)}>
+            <GoToCartButton onClick={handleCart}>
               Browse products
             </GoToCartButton>
           </LinkToCart>

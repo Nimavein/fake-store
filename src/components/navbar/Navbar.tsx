@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import routes from "../../routes";
 import CartPreview from "../cart/cartPreview/CartPreview";
 import {
@@ -9,13 +9,10 @@ import {
   NavbarWrapper,
 } from "./Navbar.styles";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { useCartData } from "../../contextProviders/cartProvider";
 
 const Navbar: React.FC = () => {
-  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
-
-  const handleCart = () => {
-    setIsCartOpen(!isCartOpen);
-  };
+  const { handleCart } = useCartData();
 
   return (
     <NavbarWrapper>
@@ -31,7 +28,7 @@ const Navbar: React.FC = () => {
       <BagButton onClick={handleCart}>
         <BagIcon icon={faShoppingBag} color="white" size="lg" />
       </BagButton>
-      <CartPreview setIsCartOpen={setIsCartOpen} isCartOpen={isCartOpen} />
+      <CartPreview />
     </NavbarWrapper>
   );
 };

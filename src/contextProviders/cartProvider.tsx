@@ -4,9 +4,16 @@ const CartContext = React.createContext({});
 
 export const CartProvider: React.FC = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+
+  const handleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   return (
-    <CartContext.Provider value={{ cart, setCart }}>
+    <CartContext.Provider
+      value={{ cart, setCart, isCartOpen, setIsCartOpen, handleCart }}
+    >
       {children}
     </CartContext.Provider>
   );

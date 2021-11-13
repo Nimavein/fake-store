@@ -26,7 +26,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const CartItem: React.FC<InCartItemType> = (props) => {
-  const { cart, setCart } = useCartData();
+  const { cart, setCart, setIsCartOpen } = useCartData();
 
   const handleDeleteItem: any = (id: number) => {
     const filteredCart: InCartItemType[] = cart.filter(
@@ -66,6 +66,7 @@ const CartItem: React.FC<InCartItemType> = (props) => {
       <CartItemInfoWrapper>
         <StyledTitleAndDeleteWrapper>
           <StyledCartLink
+            onClick={() => setIsCartOpen(false)}
             to={{
               pathname: `/store/${props.id}`,
               state: {

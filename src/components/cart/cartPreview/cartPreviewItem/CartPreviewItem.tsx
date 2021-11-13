@@ -25,7 +25,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { StyledCartLink } from "../../cartItem/CartItem.styles";
 const CartPreviewItem: React.FC<InCartItemType> = (props) => {
-  const { cart, setCart } = useCartData();
+  const { cart, setCart, setIsCartOpen } = useCartData();
 
   const handleDeleteItem: any = (id: number) => {
     const filteredCart: InCartItemType[] = cart.filter(
@@ -65,6 +65,7 @@ const CartPreviewItem: React.FC<InCartItemType> = (props) => {
       <CartItemInfo>
         <TitleAndDeleteWrapper>
           <StyledCartLink
+            onClick={() => setIsCartOpen(false)}
             to={{
               pathname: `/store/${props.id}`,
               state: {
