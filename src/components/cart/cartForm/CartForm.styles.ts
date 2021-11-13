@@ -35,4 +35,8 @@ export const CartFormEntry = styled.div`
   flex-direction: column;
 `;
 
+export const InvisibleInput = styled.input`
+  display: none;
+`;
+
 export const CartFormSubmitButton = styled(SendMessageButton)``;

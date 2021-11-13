@@ -59,3 +59,25 @@ export type ItemLocationType = {
   search?: string;
   state?: any;
 };
+
+export type CartFormDataType = {
+  name: string;
+  surname: string;
+  email: string;
+  country: string;
+  zip: string;
+  city: string;
+  street: string;
+  phoneNumber: string;
+  cartTotal: number;
+  cart: any;
+};
+
+export type CountryDataType = {
+  value: string;
+  label: string;
+};
+
+export type CartFormPropsType = {
+  cartTotal: number;
+};

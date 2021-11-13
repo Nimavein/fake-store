@@ -30,9 +30,7 @@ export const LeftSection = styled.div<{ isCartEmpty: boolean }>`
   }
 `;
 export const RightSection = styled(LeftSection)`
-   display: ${(props) => (props.isCartEmpty ? "none" : "flex")};
-
-  }
+  display: ${(props) => (props.isCartEmpty ? "none" : "flex")};
 `;
 
 export const EmptyCartWrapper = styled(EmptyCartPreview)`

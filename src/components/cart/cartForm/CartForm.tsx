@@ -8,14 +8,23 @@ import {
   CartFormSelect,
   CartFormOption,
   CartFormSubmitButton,
+  InvisibleInput,
 } from "./CartForm.styles";
 import countryList from "react-select-country-list";
+import { Divider } from "../Cart.styles";
+import { useCartData } from "../../../contextProviders/cartProvider";
+import {
+  CartFormDataType,
+  CartFormPropsType,
+  CountryDataType,
+  InCartItemType,
+} from "../../../types";
 
-const CartForm: React.FC = () => {
+const CartForm: React.FC<CartFormPropsType> = (props) => {
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState<boolean>(false);
-  const { register, handleSubmit, reset } = useForm();
-  const options = useMemo(() => countryList().getData(), []);
-  console.log(options);
+  const { register, handleSubmit, reset } = useForm<CartFormDataType>();
+  const options: CountryDataType[] = useMemo(() => countryList().getData(), []);
+  const cart: InCartItemType[] | any = useCartData();
 
   useEffect(() => {
     let submitSuccessfulTimer = setTimeout(
@@ -27,7 +36,7 @@ const CartForm: React.FC = () => {
     };
   }, [isSubmitSuccessful]);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: CartFormDataType) => {
     setIsSubmitSuccessful(true);
     console.log(data);
     reset();
@@ -35,7 +44,7 @@ const CartForm: React.FC = () => {
   return (
     <CartFormWrapper onSubmit={handleSubmit(onSubmit)}>
       <CartFormEntry>
-        <CartFormLabel>Name</CartFormLabel>
+        <CartFormLabel>Name*</CartFormLabel>
         <CartFormInput
           placeholder="Enter your name"
           {...register("name")}
@@ -44,7 +53,7 @@ const CartForm: React.FC = () => {
         />
       </CartFormEntry>
       <CartFormEntry>
-        <CartFormLabel>Surname</CartFormLabel>
+        <CartFormLabel>Surname*</CartFormLabel>
         <CartFormInput
           placeholder="Enter your surname"
           {...register("surname")}
@@ -53,16 +62,18 @@ const CartForm: React.FC = () => {
         />
       </CartFormEntry>
       <CartFormEntry>
-        <CartFormLabel>E-mail</CartFormLabel>
+        <CartFormLabel>E-mail*</CartFormLabel>
         <CartFormInput
+          type="email"
           placeholder="Enter your e-mail"
           {...register("email")}
           required
           name="email"
         />
       </CartFormEntry>
+
       <CartFormEntry>
-        <CartFormLabel>Country</CartFormLabel>
+        <CartFormLabel>Country*</CartFormLabel>
         <CartFormSelect id="country" {...register("country")} required>
           <CartFormOption value="">Select country</CartFormOption>
           {options.map((option) => {
@@ -74,10 +85,52 @@ const CartForm: React.FC = () => {
           })}
         </CartFormSelect>
       </CartFormEntry>
+      <CartFormEntry>
+        <CartFormLabel>ZIP*</CartFormLabel>
+        <CartFormInput
+          placeholder="Enter your zip-code"
+          {...register("zip")}
+          required
+          name="zip"
+        />
+      </CartFormEntry>
+      <CartFormEntry>
+        <CartFormLabel>City*</CartFormLabel>
+        <CartFormInput
+          placeholder="Enter your city"
+          {...register("city")}
+          required
+          name="city"
+        />
+      </CartFormEntry>
+      <CartFormEntry>
+        <CartFormLabel>Street*</CartFormLabel>
+        <CartFormInput
+          placeholder="Enter your street"
+          {...register("street")}
+          required
+          name="street"
+        />
+      </CartFormEntry>
+      <CartFormEntry>
+        <CartFormLabel>Phone number</CartFormLabel>
+        <CartFormInput
+          placeholder="Enter your phone number"
+          {...register("phoneNumber")}
+          name="phone"
+        />
+      </CartFormEntry>
+      <Divider />
       <CartFormSubmitButton
         isSubmitSuccessful={isSubmitSuccessful}
         type="submit"
       >
+        <InvisibleInput
+          {...register("cartTotal")}
+          value={props.cartTotal}
+          name="cartTotal"
+        />
+        <InvisibleInput {...register("cart")} value={cart} name="cart" />
         {isSubmitSuccessful ? "Bought Successfully" : "Submit"}
       </CartFormSubmitButton>
     </CartFormWrapper>
