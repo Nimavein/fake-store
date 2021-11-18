@@ -22,7 +22,7 @@ export const ItemsProvider: React.FC = ({ children }) => {
           color="#FF5F1F"
           height={200}
           width={200}
-          timeout={6000}
+          timeout={10000}
         />
       </span>
     );
